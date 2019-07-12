@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Auth::routes();
@@ -24,5 +24,27 @@ Route::get('/admin',function (){
 });
 
 
-Route::resource('admin/users','AdminUsersController');
+//this section is for middleware admin so we create route group as following
+Route::group(['middleware'=>'admin'],function (){
 
+
+    Route::resource('admin/users','AdminUsersController');
+
+    Route::resource('admin/posts','AdminPostsController');
+
+
+});
+
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

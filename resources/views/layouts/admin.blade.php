@@ -12,9 +12,12 @@
     <title>Admin</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="{{asset('css/app.css')}}" rel="stylesheet">
+
 
     <link href="{{asset('css/libs.css')}}" rel="stylesheet">
+    <link href="{{asset('css/app.css')}}" rel="stylesheet">
+
+
 
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -54,7 +57,7 @@
             <!-- /.dropdown -->
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+                    {{Auth::user()->name}}<i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-user">
                     <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
@@ -138,11 +141,11 @@
                         <a href="#"><i class="fa fa-wrench fa-fw"></i> Posts<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="/posts">All Posts</a>
+                                <a href="{{route('posts.index')}}">All Posts</a>
                             </li>
 
                             <li>
-                                <a href="/posts/create">Create Post</a>
+                                <a href="{{route('posts.create')}}">Create Post</a>
                             </li>
 
                         </ul>

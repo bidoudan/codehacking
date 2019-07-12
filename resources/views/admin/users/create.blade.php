@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>Create User</h1>
-
+<div class="row">
     {!! Form::open(['method'=>'POST','action'=>'AdminUsersController@store','files'=>true]) !!}
 
                <div class="form-group">
@@ -37,7 +37,13 @@
                </div>
 
     {!! Form::close() !!}
-    @include('includes.form-errors')
+</div>
+    <div class="row" style="margin-top: 20px">
+
+        @include('includes.form-errors')
+
+    </div>
+
 
 
 
